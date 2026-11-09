@@ -1,0 +1,83 @@
+import { createGlobalTheme } from "@vanilla-extract/css";
+
+export const vars = createGlobalTheme(":root", {
+  color: {
+    bg: "#F1F3F5",
+    surface: "#FFFFFF",
+    line: "#E9ECEF",
+    lineStrong: "#BFBFBF",
+    text1: "#000000",
+    text2: "#495056",
+    text3: "#666D75",
+    textDisabled: "#9E9E9E",
+    disabledBg: "#E9ECEF",
+    brand: "#2B96ED",
+    brandPressed: "#1583DB",
+    onBrand: "#FFFFFF",
+    brandText: "#0A70C2",
+    brandTint: "#E7F4FD",
+    brandTintText: "#0A70C2",
+    focus: "#0A70C2",
+    danger: "#C83323",
+    dangerTint: "#FBF1EF",
+    dangerTintText: "#C83323",
+    successTint: "#E6F8F3",
+    successTintText: "#137B5E",
+    infoTint: "#F2EFFF",
+    infoTintText: "#6A4DFF",
+  },
+  font: {
+    family:
+      '"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif',
+    tracking: "-0.02em",
+    titleTracking: "-0.03em",
+  },
+  fontSize: {
+    title: "28px",
+    h2: "20px",
+    body: "16px",
+    sub: "14px",
+    caption: "12px",
+    primaryButton: "19px",
+  },
+  fontWeight: {
+    regular: "400",
+    semibold: "600",
+    bold: "700",
+  },
+  lineHeight: {
+    title: "1.36",
+    h2: "1.4",
+    body: "1.55",
+    strong: "1.5",
+  },
+  space: {
+    xs: "4px",
+    stackS: "8px",
+    stackM: "16px",
+    stackL: "32px",
+    pageX: "40px",
+    blockPad: "24px",
+    blockGap: "12px",
+    rowPy: "16px",
+  },
+  radius: {
+    s: "4px",
+    m: "8px",
+    l: "12px",
+    pill: "999px",
+  },
+  size: {
+    appbar: "56px",
+    button: "56px",
+    buttonSmall: "44px",
+    badge: "24px",
+    row: "64px",
+    icon: "24px",
+    iconSmall: "18px",
+    thumbnail: "72px",
+    content: "1120px",
+  },
+});
+
+export const desktopMinWidth = "768px";
