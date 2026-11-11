@@ -54,16 +54,15 @@ pnpm dev
 
 ## 확인하기
 
-코드 검사와 포맷은 Biome으로 합니다. 아래 명령은 문제를 찾아 보여 주기만 하고
-파일을 고치지 않습니다. 실행한 명령 줄 `$ biome check` 다음에, 문제가 없으면
-`Checked`로 시작해 `No fixes applied.`로 끝나는 줄을 출력하고, 문제가 있으면 그
-아래에 `Found`로 시작하는 개수 줄을 출력합니다.
+코드 포맷은 Prettier로 검사합니다. 아래 명령은 파일을 고치지 않고 검사만 하며,
+문제가 없으면 `All matched files use Prettier code style!`를 출력하고, 포맷이
+다른 파일이 있으면 그 파일을 `[warn]`으로 시작하는 줄에 보여 줍니다.
 
 ```bash
-pnpm lint
+pnpm format:check
 ```
 
-포맷만 맞추려면 아래 명령을 실행합니다. 이 명령은 파일을 고쳐 씁니다.
+포맷을 맞추려면 아래 명령을 실행합니다. 이 명령은 파일을 고쳐 씁니다.
 
 ```bash
 pnpm format

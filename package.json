@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "biome check",
-    "format": "biome format --write"
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@tanstack/react-query": "^5.106.0",
@@ -19,9 +19,9 @@
     "react-dom": "19.3.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.6.6",
     "@vanilla-extract/next-plugin": "^2.5.2",
-    "babel-plugin-react-compiler": "1.0.0"
+    "babel-plugin-react-compiler": "1.0.0",
+    "prettier": "^3.9.10"
   },
   "packageManager": "pnpm@11.3.0"
 }
