@@ -23,7 +23,7 @@ function TripForm({ campsiteId }) {
   const [people, setPeople] = useState(DEFAULT_PEOPLE);
   const [memo, setMemo] = useState("");
   const peopleInputRef = useRef(null);
-  const { mutate, isPending, error } = useMutation({
+  const { mutate, isPending, isSuccess, error } = useMutation({
     mutationFn: createTrip,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: queryKeys.trips.all() });
@@ -73,7 +73,7 @@ function TripForm({ campsiteId }) {
       <p className={styles.preview}>
         캠핑장 {campsiteId}번 · {people}명 · {memo || "메모 없음"}
       </p>
-      <Button type="submit" disabled={isPending}>
+      <Button type="submit" disabled={isPending || isSuccess}>
         계획 추가
       </Button>
     </form>
