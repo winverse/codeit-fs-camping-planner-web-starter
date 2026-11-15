@@ -7,7 +7,7 @@ function NoticeBar() {
   const { notice } = useNoticeContext();
 
   return (
-    <div className={styles.region} role="status">
+    <div className={styles.region}>
       {notice && <p className={styles.notice}>{notice}</p>}
     </div>
   );
