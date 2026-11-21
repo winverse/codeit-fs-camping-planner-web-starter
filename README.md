@@ -16,7 +16,7 @@
 
 - `src/app/`: App Router의 경로 파일(`page.jsx`)과 공통 레이아웃(`layout.jsx`)
 - `src/features/campsites/`: 캠핑장 목록·카드·상세 화면 컴포넌트와 캠핑장 조회 훅(`hooks/`)
-- `src/features/trips/`: 캠핑 계획 추가 폼, 계획 목록·카드, 평점 컴포넌트와 계획 조회·수정 훅(`hooks/`)
+- `src/features/trips/`: 캠핑 계획 추가 폼, 계획 목록·카드, 평점 컴포넌트와 계획 조회·추가·수정 훅(`hooks/`)
 - `src/components/`: 버튼·입력란·패널·알림 막대 같은 공통 컴포넌트, 404 화면(`NotFoundPage/`)과 전체 레이아웃(`layouts/GlobalLayout/`)
 - `src/lib/`: API 요청 함수(`api.js`), 쿼리 키(`queryKeys.js`), 목록 필터 변환 함수
 - `src/providers/`, `src/contexts/`: TanStack Query의 `QueryClientProvider`와 알림 메시지 컨텍스트

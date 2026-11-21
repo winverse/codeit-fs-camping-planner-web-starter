@@ -1,6 +1,5 @@
 "use client";
 
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { Button } from "@/components/Button";
@@ -12,28 +11,16 @@ import {
   MIN_PEOPLE,
 } from "@/constants/trip";
 import { useNoticeContext } from "@/contexts/NoticeContext";
-import { createTrip } from "@/lib/api";
-import { queryKeys } from "@/lib/queryKeys";
+import useCreateTripMutation from "@/features/trips/hooks/useCreateTripMutation";
 import * as styles from "./TripForm.css";
 
 function TripForm({ campsiteId }) {
   const router = useRouter();
-  const queryClient = useQueryClient();
   const { showNotice } = useNoticeContext();
   const [people, setPeople] = useState(DEFAULT_PEOPLE);
   const [memo, setMemo] = useState("");
   const peopleInputRef = useRef(null);
-  const { mutate, isPending, isSuccess, error } = useMutation({
-    mutationFn: createTrip,
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: queryKeys.trips.all() });
-      showNotice("계획을 추가했습니다.");
-      router.push("/trips");
-    },
-    onError: () => {
-      peopleInputRef.current?.focus();
-    },
-  });
+  const { mutate, isPending, isSuccess, error } = useCreateTripMutation();
 
   function handlePeopleChange(event) {
     setPeople(Number(event.currentTarget.value));
@@ -45,7 +32,18 @@ function TripForm({ campsiteId }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    mutate({ campsiteId, people, memo });
+    mutate(
+      { campsiteId, people, memo },
+      {
+        onSuccess: () => {
+          showNotice("계획을 추가했습니다.");
+          router.push("/trips");
+        },
+        onError: () => {
+          peopleInputRef.current?.focus();
+        },
+      },
+    );
   }
 
   return (
